@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+AllCops:
+  Exclude:
+    - 'demo.rb'
+
+>>>>>>> 5706b0a623a4d62c09b4e13ae4a42db54b50f62d
 Layout/SpaceInsideHashLiteralBraces:
   Enabled: false
 
