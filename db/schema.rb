@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2018_09_17_051704) do
 
   create_table "test_results", force: :cascade do |t|
     t.boolean "completed", default: false, null: false
-    t.integer "mark"
     t.integer "user_id"
     t.integer "test_id"
     t.datetime "created_at", null: false
