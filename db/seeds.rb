@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-categories = Category.create([{title: "Front-end"}, {title: "Back-end"}, {title: "Bash"}])
+categories = Category.create!([{title: "Front-end"}, {title: "Back-end"}, {title: "Bash"}])
 tests = Test.create([
   {title: "HTML Basic", category_id: categories[0].id},
   {title: "HTML Medium", category_id: categories[0].id, level: 1},
@@ -13,7 +13,7 @@ tests = Test.create([
   {title: "Rails Basics", category_id: categories[1].id, level: 1},
   {title: "Basic Navigation", category_id: categories[2].id, level: 1}
 ])
-questions = Question.create([
+questions = Question.create!([
   {body: "Which tag usually contains meta information?", test_id: tests[0].id},
   {body: "Which tag contains the page content?", test_id: tests[0].id},
   {body: "Which tag denotes a paragraph?", test_id: tests[1].id},
@@ -22,7 +22,7 @@ questions = Question.create([
   {body: "Which command list detailed information about files in the passed directory",
     test_id: tests[4].id}
 ])
-Answer.create([
+Answer.create!([
   {body: "head", question_id: questions[0].id, correct: true},
   {body: "body", question_id: questions[0].id},
   {body: "h1", question_id: questions[0].id},
@@ -48,11 +48,11 @@ Answer.create([
   {body: "cd", question_id: questions[5].id},
   {body: "sudo", question_id: questions[5].id},
 ])
-users = User.create([
+users = User.create!([
   {login: "kost123", first_name: "Konstantin", last_name: "Gavrilov"},
   {login: "vit", first_name: "Vitaly", last_name: "Ivanov"}
 ])
-TestResult.create([
+TestResult.create!([
   {user_id: users[0].id, test_id: tests[0].id, completed: true},
   {user_id: users[1].id, test_id: tests[1].id},
   {user_id: users[1].id, test_id: tests[2].id, completed: true},
