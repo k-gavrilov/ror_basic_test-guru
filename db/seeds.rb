@@ -53,8 +53,8 @@ users = User.create([
   {login: "vit", first_name: "Vitaly", last_name: "Ivanov"}
 ])
 TestResult.create([
-  {user_id: users[0].id, test_id: tests[0].id, completed: true, mark: 5},
+  {user_id: users[0].id, test_id: tests[0].id, completed: true},
   {user_id: users[1].id, test_id: tests[1].id},
-  {user_id: users[1].id, test_id: tests[2].id, completed: true, mark: 2},
+  {user_id: users[1].id, test_id: tests[2].id, completed: true},
   {user_id: users[1].id, test_id: tests[3].id}
 ])
