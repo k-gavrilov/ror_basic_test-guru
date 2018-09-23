@@ -3,6 +3,7 @@ class Test < ApplicationRecord
   has_many :questions
   has_many :tests_users
   has_many :users, through: :tests_users
+  belongs_to :user, -> { where role: "Author" }, dependent: :destroy
 
   def self.titles_by_category(category_title)
     joins("INNER JOIN categories ON tests.category_id = categories.id")

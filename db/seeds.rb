@@ -5,13 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+users = User.create!([
+  {login: "kost123", first_name: "Konstantin", last_name: "Gavrilov", role: "Author"},
+  {login: "vit", first_name: "Vitaly", last_name: "Ivanov", role: "Student"}
+])
 categories = Category.create!([{title: "Front-end"}, {title: "Back-end"}, {title: "Bash"}])
 tests = Test.create([
-  {title: "HTML Basic", category_id: categories[0].id},
-  {title: "HTML Medium", category_id: categories[0].id, level: 1},
-  {title: "HTML Advanced", category_id: categories[0].id, level: 2},
-  {title: "Rails Basics", category_id: categories[1].id, level: 1},
-  {title: "Basic Navigation", category_id: categories[2].id, level: 1}
+  {title: "HTML Basic", category_id: categories[0].id, author_id: users[0]},
+  {title: "HTML Medium", category_id: categories[0].id, level: 1, author_id: users[0].id},
+  {title: "HTML Advanced", category_id: categories[0].id, level: 2, author_id: users[0].id},
+  {title: "Rails Basics", category_id: categories[1].id, level: 1, author_id: users[0].id},
+  {title: "Basic Navigation", category_id: categories[2].id, level: 1, author_id: users[0].id}
 ])
 questions = Question.create!([
   {body: "Which tag usually contains meta information?", test_id: tests[0].id},
@@ -48,12 +52,8 @@ Answer.create!([
   {body: "cd", question_id: questions[5].id},
   {body: "sudo", question_id: questions[5].id},
 ])
-users = User.create!([
-  {login: "kost123", first_name: "Konstantin", last_name: "Gavrilov"},
-  {login: "vit", first_name: "Vitaly", last_name: "Ivanov"}
-])
 TestsUser.create!([
-  {user_id: users[0].id, test_id: tests[0].id},
+  {user_id: users[1].id, test_id: tests[0].id},
   {user_id: users[1].id, test_id: tests[1].id},
   {user_id: users[1].id, test_id: tests[2].id},
   {user_id: users[1].id, test_id: tests[3].id}
