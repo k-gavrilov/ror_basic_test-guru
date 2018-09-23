@@ -52,9 +52,9 @@ users = User.create!([
   {login: "kost123", first_name: "Konstantin", last_name: "Gavrilov"},
   {login: "vit", first_name: "Vitaly", last_name: "Ivanov"}
 ])
-TestResult.create!([
-  {user_id: users[0].id, test_id: tests[0].id, completed: true},
+TestsUser.create!([
+  {user_id: users[0].id, test_id: tests[0].id},
   {user_id: users[1].id, test_id: tests[1].id},
-  {user_id: users[1].id, test_id: tests[2].id, completed: true},
+  {user_id: users[1].id, test_id: tests[2].id},
   {user_id: users[1].id, test_id: tests[3].id}
 ])
