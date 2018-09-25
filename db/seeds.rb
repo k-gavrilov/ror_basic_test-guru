@@ -10,8 +10,8 @@ users = User.create!([
   {login: "vit", first_name: "Vitaly", last_name: "Ivanov", role: "Student"}
 ])
 categories = Category.create!([{title: "Front-end"}, {title: "Back-end"}, {title: "Bash"}])
-tests = Test.create([
-  {title: "HTML Basic", category_id: categories[0].id, author_id: users[0]},
+tests = Test.create!([
+  {title: "HTML Basic", category_id: categories[0].id, author_id: users[0].id},
   {title: "HTML Medium", category_id: categories[0].id, level: 1, author_id: users[0].id},
   {title: "HTML Advanced", category_id: categories[0].id, level: 2, author_id: users[0].id},
   {title: "Rails Basics", category_id: categories[1].id, level: 1, author_id: users[0].id},
