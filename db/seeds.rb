@@ -52,7 +52,7 @@ Answer.create!([
   {body: "cd", question_id: questions[5].id},
   {body: "sudo", question_id: questions[5].id},
 ])
-TestsUser.create!([
+TestPassing.create!([
   {user_id: users[1].id, test_id: tests[0].id},
   {user_id: users[1].id, test_id: tests[1].id},
   {user_id: users[1].id, test_id: tests[2].id},
