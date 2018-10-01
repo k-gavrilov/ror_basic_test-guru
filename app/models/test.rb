@@ -1,7 +1,7 @@
 class Test < ApplicationRecord
   belongs_to :category
-  has_many :questions
-  has_many :test_passings
+  has_many :questions, dependent: destroy
+  has_many :test_passings, dependent: destroy
   has_many :users, through: :tests_passings
 
   def self.titles_by_category(category_title)

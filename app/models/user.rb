@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :test_passings
+  has_many :test_passings, dependent: destroy
   has_many :tests, through: :test_passings
   has_many :works, class_name: "Test", foreign_key: :author_id
 
