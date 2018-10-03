@@ -6,6 +6,6 @@ class Test < ApplicationRecord
   has_many :users, through: :tests_passings
 
   def self.titles_by_category(category_title)
-    Category.find_by(title: category_title).tests.order(:title).pluck(:title)
+    joins(:category).where(categories: {title: category_title}).order(:title).pluck(:title)
   end
 end
