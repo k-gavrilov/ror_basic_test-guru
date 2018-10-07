@@ -5,6 +5,10 @@ class Test < ApplicationRecord
   has_many :test_passings, dependent: :destroy
   has_many :users, through: :tests_passings
 
+  scope :easy, -> { where(level: 0..1) }
+  scope :medium, -> { where(level: 2..4) }
+  scope :hard, -> { where(level: 5..Float::INFINITY) }
+
   def self.titles_by_category(category_title)
     joins(:category).where(categories: {title: category_title}).order(:title).pluck(:title)
   end
