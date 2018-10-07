@@ -12,4 +12,6 @@ class Test < ApplicationRecord
   scope :titles_by_category, (lambda do |category_title|
     joins(:category).where(categories: {title: category_title}).order(:title).pluck(:title)
   end)
+
+  validates :title, presence: true
 end
