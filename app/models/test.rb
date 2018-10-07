@@ -9,7 +9,7 @@ class Test < ApplicationRecord
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
 
-  def self.titles_by_category(category_title)
+  scope :titles_by_category, (lambda do |category_title|
     joins(:category).where(categories: {title: category_title}).order(:title).pluck(:title)
-  end
+  end)
 end
