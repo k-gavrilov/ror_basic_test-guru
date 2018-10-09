@@ -10,6 +10,6 @@ class Answer < ApplicationRecord
 
   def validate_number_of_answers
     return unless question.answers.size >= MAX_NUM_ANSWERS
-    errors.add(:question_id, "There is already maximum number of questions (#{MAX_NUM_ANSWERS})")
+    errors.add(:question, "There is already maximum number of questions (#{MAX_NUM_ANSWERS})")
   end
 end
