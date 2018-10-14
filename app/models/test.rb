@@ -9,9 +9,9 @@ class Test < ApplicationRecord
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
 
-  scope :titles_by_category, (lambda do |category_title|
+  scope :titles_by_category, -> (category_title) {
     joins(:category).where(categories: {title: category_title}).order(:title).pluck(:title)
-  end)
+  }
 
   validates :title, presence: true
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
