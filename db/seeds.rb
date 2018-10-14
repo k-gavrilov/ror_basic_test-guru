@@ -6,13 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 users = User.create!([
-  {login: "kost123", first_name: "Konstantin", last_name: "Gavrilov", role: "Author"},
-  {login: "vit", first_name: "Vitaly", last_name: "Ivanov", role: "Student"}
+  {login: "kost123", first_name: "Konstantin", last_name: "Gavrilov", role: "Author",
+    email: "konstantin@gmail.com"},
+  {login: "vit", first_name: "Vitaly", last_name: "Ivanov", role: "Student",
+    email: "vitaly@gmail.com"}
 ])
 categories = Category.create!([{title: "Front-end"}, {title: "Back-end"}, {title: "Bash"}])
 tests = Test.create!([
   {title: "HTML Basic", category: categories[0], author: users[0]},
-  {title: "HTML Medium", category: categories[0], level: 1, author: users[0]},
+  {title: "HTML Medium", category: categories[0], level: 12, author: users[0]},
   {title: "HTML Advanced", category: categories[0], level: 2, author: users[0]},
   {title: "Rails Basics", category: categories[1], level: 1, author: users[0]},
   {title: "Basic Navigation", category: categories[2], level: 1, author: users[0]}
